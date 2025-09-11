@@ -1,0 +1,42 @@
+2025-09-05 06:24:17,776 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-05 06:24:17,776 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-05 06:24:17,776 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-05 06:24:17,776 - INFO - 🎵 Audio YouTube Downloader (No API) Started
+2025-09-05 06:24:17,776 - INFO - 📁 Download directory: /storage/emulated/0/audio-youtube/
+2025-09-05 06:24:17,777 - INFO - ⏰ Check interval: 30 phút
+2025-09-05 06:24:17,777 - INFO - 
+============================================================
+2025-09-05 06:24:17,777 - INFO - 🕐 Checking for new videos at 2025-09-05 06:24:17
+2025-09-05 06:24:17,777 - INFO - ============================================================
+2025-09-05 06:24:17,777 - INFO - 🗑️ Cleaning old files older than 2 days
+2025-09-05 06:24:17,777 - INFO - 📅 Current date: 250905, Limit date: 250903
+2025-09-05 06:24:17,777 - INFO - 🛡️ Bảo vệ thư mục bbooks - không xóa file nào từ đây
+2025-09-05 06:24:17,777 - ERROR - ❌ Error cleaning old files: [Errno 2] No such file or directory: '/storage/emulated/0/audio-youtube/'
+2025-09-05 06:24:17,777 - INFO - 🔍 Checking for new videos...
+2025-09-05 06:24:17,777 - INFO - 
+==================================================
+2025-09-05 06:24:17,777 - INFO - 📺 Checking channel: Sean Le
+2025-09-05 06:24:17,777 - INFO - ==================================================
+2025-09-05 06:24:17,777 - INFO - 🔍 Fetching up to 3 latest videos from Sean Le using yt-dlp...
+2025-09-05 06:24:35,158 - INFO - ⏹️ Stopped by user
+2025-09-05 06:25:35,794 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-05 06:25:35,794 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-05 06:25:35,794 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-05 06:25:35,794 - INFO - 🎵 Audio YouTube Downloader (No API) Started
+2025-09-05 06:25:35,794 - INFO - 📁 Download directory: /storage/emulated/0/audio-youtube/
+2025-09-05 06:25:35,795 - INFO - ⏰ Check interval: 30 phút
+2025-09-05 06:25:35,795 - INFO - 
+============================================================
+2025-09-05 06:25:35,795 - INFO - 🕐 Checking for new videos at 2025-09-05 06:25:35
+2025-09-05 06:25:35,795 - INFO - ============================================================
+2025-09-05 06:25:35,795 - INFO - 🗑️ Cleaning old files older than 2 days
+2025-09-05 06:25:35,795 - INFO - 📅 Current date: 250905, Limit date: 250903
+2025-09-05 06:25:35,795 - INFO - 🛡️ Bảo vệ thư mục bbooks - không xóa file nào từ đây
+2025-09-05 06:25:35,795 - ERROR - ❌ Error cleaning old files: [Errno 2] No such file or directory: '/storage/emulated/0/audio-youtube/'
+2025-09-05 06:25:35,795 - INFO - 🔍 Checking for new videos...
+2025-09-05 06:25:35,795 - INFO - 
+==================================================
+2025-09-05 06:25:35,795 - INFO - 📺 Checking channel: Sean Le
+2025-09-05 06:25:35,795 - INFO - ==================================================
+2025-09-05 06:25:35,795 - INFO - 🔍 Fetching up to 3 latest videos from Sean Le using yt-dlp...
+2025-09-05 06:25:44,545 - INFO - ⏹️ Stopped by user
