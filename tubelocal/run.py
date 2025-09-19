@@ -6,6 +6,7 @@ import time
 import json
 import yt_dlp
 import logging
+import requests
 from datetime import datetime, timedelta
 
 # Cấu hình logging
@@ -21,6 +22,11 @@ logging.basicConfig(
 DOWNLOAD_DIR = '/storage/emulated/0/_MEDIA/_TUBELOCAL/'
 BBOOKS_DIR = os.path.join(DOWNLOAD_DIR, 'bbooks/')
 VIDEO_LIST_FILE = 'downloaded_videos_no_api.json'
+
+# Firebase configuration
+FIREBASE_WEBAPP_URL = 'https://admin-t4.web.app'
+FIREBASE_API_URL = 'https://firestore.googleapis.com/v1/projects/admin-t4/databases/(default)/documents'
+SCRIPT_TUBELOCAL_COLLECTION = 'script-tubelocal'
 
 CHANNELS = {
     'Sean Le': {
@@ -83,6 +89,71 @@ for folder in [DOWNLOAD_DIR, BBOOKS_DIR, os.path.join(DOWNLOAD_DIR, 'videos')]:
             logging.info(f"✅ Created download directory: {folder}")
         except Exception as e:
             logging.error(f"❌ Cannot create download directory: {e}")
+
+def test_firebase_connection():
+    """Test kết nối Firebase trước khi chạy"""
+    try:
+        logging.info("🔍 Testing Firebase connection...")
+        url = f"{FIREBASE_API_URL}/{SCRIPT_TUBELOCAL_COLLECTION}"
+        response = requests.get(url, timeout=10)
+        
+        if response.status_code == 200:
+            logging.info("✅ Firebase connection successful!")
+            return True
+        else:
+            logging.warning(f"⚠️ Firebase connection failed: {response.status_code}")
+            return False
+    except Exception as e:
+        logging.warning(f"⚠️ Firebase connection error: {e}")
+        return False
+
+def get_channels_from_firebase():
+    """Lấy dữ liệu channels từ Firebase Firestore"""
+    try:
+        logging.info("🔄 Đang lấy dữ liệu channels từ Firebase...")
+        
+        # URL để lấy tất cả documents trong collection script-tubelocal
+        url = f"{FIREBASE_API_URL}/{SCRIPT_TUBELOCAL_COLLECTION}"
+        
+        # Gửi request GET
+        response = requests.get(url, timeout=30)
+        
+        if response.status_code == 200:
+            data = response.json()
+            channels = {}
+            
+            # Parse dữ liệu từ Firestore format
+            if 'documents' in data:
+                for doc in data['documents']:
+                    doc_id = doc['name'].split('/')[-1]
+                    fields = doc.get('fields', {})
+                    
+                    # Extract fields từ Firestore format
+                    channel_title = fields.get('channelTitle', {}).get('stringValue', '')
+                    url = fields.get('url', {}).get('stringValue', '')
+                    handle = fields.get('handle', {}).get('stringValue', '')
+                    download_type = fields.get('download', {}).get('stringValue', 'audio')
+                    
+                    if channel_title and url:
+                        channels[channel_title] = {
+                            'url': url,
+                            'handle': handle,
+                            'download': download_type,
+                            'channel_title': channel_title,
+                            'id': doc_id
+                        }
+            
+            logging.info(f"✅ Đã lấy {len(channels)} channels từ Firebase")
+            return channels
+            
+        else:
+            logging.error(f"❌ Lỗi khi lấy dữ liệu từ Firebase: {response.status_code}")
+            logging.error(f"Response: {response.text}")
+            return {}
+            
+    except Exception as e:
+        logging.error(f"❌ Lỗi khi kết nối Firebase: {e}")
+        return {}
 
 def safe_filename(s):
     invalid_chars = '<>:"/\\|?*'
@@ -329,10 +400,27 @@ def check_new_videos():
     try:
         logging.info("🔍 Checking for new videos...")
 
+        # Lấy dữ liệu channels từ Firebase
+        firebase_channels = get_channels_from_firebase()
+        
+        # Sử dụng dữ liệu từ Firebase nếu có, nếu không thì dùng dữ liệu local
+        channels_to_use = firebase_channels if firebase_channels else CHANNELS
+        
+        if firebase_channels:
+            logging.info(f"✅ Sử dụng {len(firebase_channels)} channels từ Firebase")
+            logging.info("📋 Danh sách channels từ Firebase:")
+            for name, info in firebase_channels.items():
+                logging.info(f"  - {name}: {info['url']} ({info['download']})")
+        else:
+            logging.info(f"⚠️ Sử dụng {len(CHANNELS)} channels từ cấu hình local")
+            logging.info("📋 Danh sách channels từ cấu hình local:")
+            for name, info in CHANNELS.items():
+                logging.info(f"  - {name}: {info['url']} ({info['download']})")
+
         downloaded_videos = load_downloaded_videos()
         downloaded_ids = [v.get('video_id', v) if isinstance(v, dict) else v for v in downloaded_videos]
 
-        for channel_name, channel_info in CHANNELS.items():
+        for channel_name, channel_info in channels_to_use.items():
             logging.info(f"\n{'='*50}")
             logging.info(f"📺 Checking channel: {channel_name}")
             logging.info(f"{'='*50}")
@@ -381,6 +469,13 @@ def monitor_new_videos():
     logging.info("🎵 Audio YouTube Downloader (No API) Started")
     logging.info(f"📁 Download directory: {DOWNLOAD_DIR}")
     logging.info(f"⏰ Check interval: 30 phút")
+    
+    # Test Firebase connection on startup
+    firebase_available = test_firebase_connection()
+    if firebase_available:
+        logging.info("🌐 Firebase integration enabled - channels will be loaded from webapp")
+    else:
+        logging.info("📱 Using local channel configuration")
 
     while True:
         try:

@@ -40,3 +40,59 @@
 2025-09-05 06:25:35,795 - INFO - ==================================================
 2025-09-05 06:25:35,795 - INFO - 🔍 Fetching up to 3 latest videos from Sean Le using yt-dlp...
 2025-09-05 06:25:44,545 - INFO - ⏹️ Stopped by user
+2025-09-19 16:46:15,010 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-19 16:46:15,010 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-19 16:46:15,010 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-19 16:46:15,011 - INFO - 🔍 Testing Firebase connection...
+2025-09-19 16:46:15,539 - INFO - ✅ Firebase connection successful!
+2025-09-19 16:46:15,539 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-19 16:46:16,090 - INFO - ✅ Đã lấy 3 channels từ Firebase
+2025-09-19 16:49:25,531 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-19 16:49:25,532 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-19 16:49:25,532 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-19 16:49:25,532 - INFO - 🎵 Audio YouTube Downloader (No API) Started
+2025-09-19 16:49:25,532 - INFO - 📁 Download directory: /storage/emulated/0/_MEDIA/_TUBELOCAL/
+2025-09-19 16:49:25,532 - INFO - ⏰ Check interval: 30 phút
+2025-09-19 16:49:25,532 - INFO - 🔍 Testing Firebase connection...
+2025-09-19 16:49:26,493 - INFO - ✅ Firebase connection successful!
+2025-09-19 16:49:26,494 - INFO - 🌐 Firebase integration enabled - channels will be loaded from webapp
+2025-09-19 16:49:26,494 - INFO - 
+============================================================
+2025-09-19 16:49:26,494 - INFO - 🕐 Checking for new videos at 2025-09-19 16:49:26
+2025-09-19 16:49:26,494 - INFO - ============================================================
+2025-09-19 16:49:26,494 - INFO - 🗑️ Cleaning old files older than 2 days
+2025-09-19 16:49:26,494 - INFO - 📅 Current date: 250919, Limit date: 250917
+2025-09-19 16:49:26,495 - INFO - 🛡️ Bảo vệ thư mục bbooks - không xóa file nào từ đây
+2025-09-19 16:49:26,495 - ERROR - ❌ Error cleaning old files: [Errno 2] No such file or directory: '/storage/emulated/0/_MEDIA/_TUBELOCAL/'
+2025-09-19 16:49:26,495 - INFO - 🔍 Checking for new videos...
+2025-09-19 16:49:26,495 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-19 16:49:27,015 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-19 16:49:27,016 - INFO - ✅ Sử dụng 6 channels từ Firebase
+2025-09-19 16:49:27,017 - INFO - 📋 Danh sách channels từ Firebase:
+2025-09-19 16:49:27,017 - INFO -   - SGP: https://m.youtube.com/@SGP_channel/videos (audio, video)
+2025-09-19 16:49:27,017 - INFO -   - BBooks: https://www.youtube.com/@bbooks-channel/videos (audio)
+2025-09-19 16:49:27,017 - INFO -   - TCKD: https://m.youtube.com/@TaichinhKinhdoanhTV/videos (audio, video)
+2025-09-19 16:49:27,017 - INFO -   - SLe: https://www.youtube.com/@SeanLe714/streams (audio)
+2025-09-19 16:49:27,017 - INFO -   - BBC: https://www.youtube.com/@bbctiengviet/videos (audio, video)
+2025-09-19 16:49:27,017 - INFO -   - RFA: https://m.youtube.com/@rfavietnamese/videos (audio, video)
+2025-09-19 16:49:27,017 - INFO - 
+==================================================
+2025-09-19 16:49:27,017 - INFO - 📺 Checking channel: SGP
+2025-09-19 16:49:27,017 - INFO - ==================================================
+2025-09-19 16:49:27,018 - INFO - 🔍 Fetching up to 3 latest videos from SGP using yt-dlp...
+2025-09-19 16:49:44,790 - INFO - 📺 Found 3 videos from SGP
+2025-09-19 16:49:44,793 - INFO - 🆕 New video found: Ukr tổng phản công, giải phóng 160 km² Donetsk, bắt giữ 100 binh sĩ Nga trong “vạc dầu” Dobropillia
+2025-09-19 16:49:44,793 - ERROR - ❌ Error downloading audio https://www.youtube.com/watch?v=fh2BqvDYTas: 'SGP'
+2025-09-19 16:49:44,793 - ERROR - ❌ Error downloading video https://www.youtube.com/watch?v=fh2BqvDYTas: 'SGP'
+2025-09-19 16:49:44,793 - INFO - 🆕 New video found: HOẢ LỰC TRỰC DIỆN! Tank Ukraine nghiền nát ổ bộ binh Nga đang tử thủ trong nhà hoang
+2025-09-19 16:49:44,793 - ERROR - ❌ Error downloading audio https://www.youtube.com/watch?v=rZjJnY8-Zf4: 'SGP'
+2025-09-19 16:49:44,793 - ERROR - ❌ Error downloading video https://www.youtube.com/watch?v=rZjJnY8-Zf4: 'SGP'
+2025-09-19 16:49:44,793 - INFO - 🆕 New video found: TÂM ĐIỂM 18/9: HIMARS mang bom chùm nã thẳng khu tập trung địch, hàng tá lính chết không kịp ngáp
+2025-09-19 16:49:44,793 - ERROR - ❌ Error downloading audio https://www.youtube.com/watch?v=6uA08mpKQdE: 'SGP'
+2025-09-19 16:49:44,793 - ERROR - ❌ Error downloading video https://www.youtube.com/watch?v=6uA08mpKQdE: 'SGP'
+2025-09-19 16:49:44,793 - INFO - 
+==================================================
+2025-09-19 16:49:44,794 - INFO - 📺 Checking channel: BBooks
+2025-09-19 16:49:44,794 - INFO - ==================================================
+2025-09-19 16:49:44,794 - INFO - 🔍 Fetching up to 3 latest videos from BBooks using yt-dlp...
+2025-09-19 16:49:52,559 - INFO - ⏹️ Stopped by user
