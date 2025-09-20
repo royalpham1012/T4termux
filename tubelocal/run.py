@@ -107,6 +107,25 @@ def test_firebase_connection():
         logging.warning(f"⚠️ Firebase connection error: {e}")
         return False
 
+def validate_download_type(download_type):
+    """Validate và normalize download type"""
+    if not download_type:
+        return 'audio'
+    
+    # Normalize download type
+    download_type = download_type.lower().strip()
+    
+    # Map các giá trị có thể có
+    if download_type in ['audio only', 'audio']:
+        return 'audio'
+    elif download_type in ['video only', 'video']:
+        return 'video'
+    elif download_type in ['audio + video', 'audio, video', 'both']:
+        return 'audio, video'
+    else:
+        logging.warning(f"⚠️ Unknown download type: {download_type}, defaulting to 'audio'")
+        return 'audio'
+
 def get_channels_from_firebase():
     """Lấy dữ liệu channels từ Firebase Firestore"""
     try:
@@ -134,6 +153,9 @@ def get_channels_from_firebase():
                     handle = fields.get('handle', {}).get('stringValue', '')
                     download_type = fields.get('download', {}).get('stringValue', 'audio')
                     
+                    # Validate download type
+                    download_type = validate_download_type(download_type)
+                    
                     if channel_title and url:
                         channels[channel_title] = {
                             'url': url,
@@ -142,6 +164,7 @@ def get_channels_from_firebase():
                             'channel_title': channel_title,
                             'id': doc_id
                         }
+                        logging.info(f"✅ Channel loaded: {channel_title} - {download_type}")
             
             logging.info(f"✅ Đã lấy {len(channels)} channels từ Firebase")
             return channels
@@ -259,14 +282,18 @@ def remove_old_files(days=2):
 
 def download_audio(video_url, video_id, video_title, channel_name, upload_date=None):
     try:
+        # Lấy thông tin channel từ Firebase hoặc local
+        firebase_channels = get_channels_from_firebase()
+        channels_to_use = firebase_channels if firebase_channels else CHANNELS
+        
         # Định dạng tên file theo format: YYMMDDHHmm - channel_title - tiêu đề video
         if channel_name == 'BBooks':
             target_dir = BBOOKS_DIR
             filename = safe_filename(video_title)
         else:
             target_dir = DOWNLOAD_DIR
-            # Lấy channel_title từ CHANNELS dict
-            channel_title = CHANNELS[channel_name].get('channel_title', channel_name)
+            # Lấy channel_title từ dữ liệu hiện tại
+            channel_title = channels_to_use.get(channel_name, {}).get('channel_title', channel_name)
             time_part = datetime.now().strftime("%y%m%d%H%M")
             filename = f"{time_part} - {channel_title} - {safe_filename(video_title)}"
         output_template = os.path.join(target_dir, f'{filename}.%(ext)s')
@@ -299,14 +326,18 @@ def download_audio(video_url, video_id, video_title, channel_name, upload_date=N
 
 def download_video(video_url, video_id, video_title, channel_name, upload_date=None):
     try:
+        # Lấy thông tin channel từ Firebase hoặc local
+        firebase_channels = get_channels_from_firebase()
+        channels_to_use = firebase_channels if firebase_channels else CHANNELS
+        
         # Định dạng tên file theo format: YYMMDDHHmm - channel_title - tiêu đề video
         if channel_name == 'BBooks':
             target_dir = os.path.join(DOWNLOAD_DIR, 'videos', 'bbooks')
             filename = safe_filename(video_title)
         else:
             target_dir = os.path.join(DOWNLOAD_DIR, 'videos')
-            # Lấy channel_title từ CHANNELS dict
-            channel_title = CHANNELS[channel_name].get('channel_title', channel_name)
+            # Lấy channel_title từ dữ liệu hiện tại
+            channel_title = channels_to_use.get(channel_name, {}).get('channel_title', channel_name)
             time_part = datetime.now().strftime("%y%m%d%H%M")
             filename = f"{time_part} - {channel_title} - {safe_filename(video_title)}"
         
@@ -400,7 +431,8 @@ def check_new_videos():
     try:
         logging.info("🔍 Checking for new videos...")
 
-        # Lấy dữ liệu channels từ Firebase
+        # QUÉT LẠI DANH SÁCH CHANNELS TỪ FIREBASE MỖI LẦN CHẠY
+        logging.info("🔄 Quét lại danh sách channels từ Firebase...")
         firebase_channels = get_channels_from_firebase()
         
         # Sử dụng dữ liệu từ Firebase nếu có, nếu không thì dùng dữ liệu local
@@ -444,17 +476,24 @@ def check_new_videos():
                 if video_id not in downloaded_ids:
                     logging.info(f"🆕 New video found: {video_title}")
                     
-                    # Kiểm tra loại download cần thiết
+                    # Kiểm tra loại download cần thiết từ Firebase
                     download_types = channel_info.get('download', 'audio').split(', ')
+                    download_types = [dt.strip() for dt in download_types]  # Remove spaces
+                    
+                    logging.info(f"📥 Download types for {channel_name}: {download_types}")
                     
                     success = True
                     if 'audio' in download_types:
+                        logging.info(f"🎵 Downloading audio for: {video_title}")
                         if not download_audio(video_url, video_id, video_title, channel_name, upload_date):
                             success = False
+                            logging.error(f"❌ Failed to download audio for: {video_title}")
                     
                     if 'video' in download_types:
+                        logging.info(f"🎬 Downloading video for: {video_title}")
                         if not download_video(video_url, video_id, video_title, channel_name, upload_date):
                             success = False
+                            logging.error(f"❌ Failed to download video for: {video_title}")
                     
                     if success:
                         downloaded_ids.append(video_id)

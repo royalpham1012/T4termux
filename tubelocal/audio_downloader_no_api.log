@@ -96,3 +96,139 @@
 2025-09-19 16:49:44,794 - INFO - ==================================================
 2025-09-19 16:49:44,794 - INFO - 🔍 Fetching up to 3 latest videos from BBooks using yt-dlp...
 2025-09-19 16:49:52,559 - INFO - ⏹️ Stopped by user
+2025-09-21 05:57:36,106 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:57:36,106 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:57:36,106 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:57:36,106 - INFO - 🔍 Testing Firebase connection...
+2025-09-21 05:57:36,678 - INFO - ✅ Firebase connection successful!
+2025-09-21 05:57:36,680 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:57:37,180 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:57:37,180 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:57:37,180 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:57:37,180 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:57:37,181 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:57:37,181 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:57:37,181 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:57:37,182 - WARNING - ⚠️ Unknown download type: invalid_type, defaulting to 'audio'
+2025-09-21 05:59:03,984 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:03,984 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:03,985 - ERROR - ❌ Cannot create download directory: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:03,985 - INFO - 🎵 Audio YouTube Downloader (No API) Started
+2025-09-21 05:59:03,985 - INFO - 📁 Download directory: /storage/emulated/0/_MEDIA/_TUBELOCAL/
+2025-09-21 05:59:03,985 - INFO - ⏰ Check interval: 30 phút
+2025-09-21 05:59:03,985 - INFO - 🔍 Testing Firebase connection...
+2025-09-21 05:59:04,629 - INFO - ✅ Firebase connection successful!
+2025-09-21 05:59:04,631 - INFO - 🌐 Firebase integration enabled - channels will be loaded from webapp
+2025-09-21 05:59:04,631 - INFO - 
+============================================================
+2025-09-21 05:59:04,631 - INFO - 🕐 Checking for new videos at 2025-09-21 05:59:04
+2025-09-21 05:59:04,631 - INFO - ============================================================
+2025-09-21 05:59:04,631 - INFO - 🗑️ Cleaning old files older than 2 days
+2025-09-21 05:59:04,631 - INFO - 📅 Current date: 250921, Limit date: 250919
+2025-09-21 05:59:04,632 - INFO - 🛡️ Bảo vệ thư mục bbooks - không xóa file nào từ đây
+2025-09-21 05:59:04,632 - ERROR - ❌ Error cleaning old files: [Errno 2] No such file or directory: '/storage/emulated/0/_MEDIA/_TUBELOCAL/'
+2025-09-21 05:59:04,632 - INFO - 🔍 Checking for new videos...
+2025-09-21 05:59:04,632 - INFO - 🔄 Quét lại danh sách channels từ Firebase...
+2025-09-21 05:59:04,632 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:59:05,166 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:59:05,166 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:59:05,166 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:59:05,166 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:59:05,166 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:59:05,166 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:59:05,166 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:59:05,168 - INFO - ✅ Sử dụng 6 channels từ Firebase
+2025-09-21 05:59:05,168 - INFO - 📋 Danh sách channels từ Firebase:
+2025-09-21 05:59:05,168 - INFO -   - SGP: https://m.youtube.com/@SGP_channel/videos (audio, video)
+2025-09-21 05:59:05,168 - INFO -   - BBooks: https://www.youtube.com/@bbooks-channel/videos (audio)
+2025-09-21 05:59:05,169 - INFO -   - TCKD: https://m.youtube.com/@TaichinhKinhdoanhTV/videos (audio, video)
+2025-09-21 05:59:05,169 - INFO -   - SLe: https://www.youtube.com/@SeanLe714/streams (audio)
+2025-09-21 05:59:05,169 - INFO -   - BBC: https://www.youtube.com/@bbctiengviet/videos (audio, video)
+2025-09-21 05:59:05,169 - INFO -   - RFA: https://m.youtube.com/@rfavietnamese/videos (audio, video)
+2025-09-21 05:59:05,169 - INFO - 
+==================================================
+2025-09-21 05:59:05,169 - INFO - 📺 Checking channel: SGP
+2025-09-21 05:59:05,169 - INFO - ==================================================
+2025-09-21 05:59:05,169 - INFO - 🔍 Fetching up to 3 latest videos from SGP using yt-dlp...
+2025-09-21 05:59:18,652 - INFO - 📺 Found 3 videos from SGP
+2025-09-21 05:59:18,654 - INFO - 🆕 New video found: TÀI LIỆU CHẤN ĐỘNG! Nga-Việt che giấu hợp đồng vũ khí, lách trừng phạt từ Mỹ; Hà Nội đối diện rủi ro
+2025-09-21 05:59:18,655 - INFO - 📥 Download types for SGP: ['audio', 'video']
+2025-09-21 05:59:18,655 - INFO - 🎵 Downloading audio for: TÀI LIỆU CHẤN ĐỘNG! Nga-Việt che giấu hợp đồng vũ khí, lách trừng phạt từ Mỹ; Hà Nội đối diện rủi ro
+2025-09-21 05:59:18,655 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:59:19,501 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:59:19,501 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:59:19,501 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:59:19,501 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:59:19,501 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:59:19,501 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:59:19,501 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:59:19,503 - INFO - 🎵 Downloading audio: TÀI LIỆU CHẤN ĐỘNG! Nga-Việt che giấu hợp đồng vũ khí, lách trừng phạt từ Mỹ; Hà Nội đối diện rủi ro
+2025-09-21 05:59:23,370 - ERROR - ❌ Error downloading audio https://www.youtube.com/watch?v=1iKgdU10Byw: [0;31mERROR:[0m unable to create directory [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:23,371 - ERROR - ❌ Failed to download audio for: TÀI LIỆU CHẤN ĐỘNG! Nga-Việt che giấu hợp đồng vũ khí, lách trừng phạt từ Mỹ; Hà Nội đối diện rủi ro
+2025-09-21 05:59:23,371 - INFO - 🎬 Downloading video for: TÀI LIỆU CHẤN ĐỘNG! Nga-Việt che giấu hợp đồng vũ khí, lách trừng phạt từ Mỹ; Hà Nội đối diện rủi ro
+2025-09-21 05:59:23,371 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:59:24,237 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:59:24,237 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:59:24,237 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:59:24,237 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:59:24,237 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:59:24,237 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:59:24,237 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:59:24,239 - ERROR - ❌ Error downloading video https://www.youtube.com/watch?v=1iKgdU10Byw: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:24,239 - ERROR - ❌ Failed to download video for: TÀI LIỆU CHẤN ĐỘNG! Nga-Việt che giấu hợp đồng vũ khí, lách trừng phạt từ Mỹ; Hà Nội đối diện rủi ro
+2025-09-21 05:59:24,239 - INFO - 🆕 New video found: KHẨN CẤP! Điều 4 NATO kích hoạt, F-35 xuất kích đẩy lùi tiêm kích Nga xâm nhập Estonia
+2025-09-21 05:59:24,239 - INFO - 📥 Download types for SGP: ['audio', 'video']
+2025-09-21 05:59:24,239 - INFO - 🎵 Downloading audio for: KHẨN CẤP! Điều 4 NATO kích hoạt, F-35 xuất kích đẩy lùi tiêm kích Nga xâm nhập Estonia
+2025-09-21 05:59:24,239 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:59:24,753 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:59:24,753 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:59:24,754 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:59:24,754 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:59:24,754 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:59:24,754 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:59:24,754 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:59:24,755 - INFO - 🎵 Downloading audio: KHẨN CẤP! Điều 4 NATO kích hoạt, F-35 xuất kích đẩy lùi tiêm kích Nga xâm nhập Estonia
+2025-09-21 05:59:28,528 - ERROR - ❌ Error downloading audio https://www.youtube.com/watch?v=AyDZYSqVAoE: [0;31mERROR:[0m unable to create directory [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:28,529 - ERROR - ❌ Failed to download audio for: KHẨN CẤP! Điều 4 NATO kích hoạt, F-35 xuất kích đẩy lùi tiêm kích Nga xâm nhập Estonia
+2025-09-21 05:59:28,529 - INFO - 🎬 Downloading video for: KHẨN CẤP! Điều 4 NATO kích hoạt, F-35 xuất kích đẩy lùi tiêm kích Nga xâm nhập Estonia
+2025-09-21 05:59:28,529 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:59:29,109 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:59:29,109 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:59:29,110 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:59:29,110 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:59:29,110 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:59:29,110 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:59:29,110 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:59:29,114 - ERROR - ❌ Error downloading video https://www.youtube.com/watch?v=AyDZYSqVAoE: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:29,114 - ERROR - ❌ Failed to download video for: KHẨN CẤP! Điều 4 NATO kích hoạt, F-35 xuất kích đẩy lùi tiêm kích Nga xâm nhập Estonia
+2025-09-21 05:59:29,114 - INFO - 🆕 New video found: Ukr tổng phản công, giải phóng 160 km² Donetsk, bắt giữ 100 binh sĩ Nga trong “vạc dầu” Dobropillia
+2025-09-21 05:59:29,114 - INFO - 📥 Download types for SGP: ['audio', 'video']
+2025-09-21 05:59:29,114 - INFO - 🎵 Downloading audio for: Ukr tổng phản công, giải phóng 160 km² Donetsk, bắt giữ 100 binh sĩ Nga trong “vạc dầu” Dobropillia
+2025-09-21 05:59:29,114 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:59:29,656 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:59:29,656 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:59:29,656 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:59:29,656 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:59:29,656 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:59:29,657 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:59:29,657 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:59:29,658 - INFO - 🎵 Downloading audio: Ukr tổng phản công, giải phóng 160 km² Donetsk, bắt giữ 100 binh sĩ Nga trong “vạc dầu” Dobropillia
+2025-09-21 05:59:34,367 - ERROR - ❌ Error downloading audio https://www.youtube.com/watch?v=fh2BqvDYTas: [0;31mERROR:[0m unable to create directory [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:34,368 - ERROR - ❌ Failed to download audio for: Ukr tổng phản công, giải phóng 160 km² Donetsk, bắt giữ 100 binh sĩ Nga trong “vạc dầu” Dobropillia
+2025-09-21 05:59:34,368 - INFO - 🎬 Downloading video for: Ukr tổng phản công, giải phóng 160 km² Donetsk, bắt giữ 100 binh sĩ Nga trong “vạc dầu” Dobropillia
+2025-09-21 05:59:34,368 - INFO - 🔄 Đang lấy dữ liệu channels từ Firebase...
+2025-09-21 05:59:35,260 - INFO - ✅ Channel loaded: SGP - audio, video
+2025-09-21 05:59:35,260 - INFO - ✅ Channel loaded: BBooks - audio
+2025-09-21 05:59:35,260 - INFO - ✅ Channel loaded: TCKD - audio, video
+2025-09-21 05:59:35,260 - INFO - ✅ Channel loaded: SLe - audio
+2025-09-21 05:59:35,260 - INFO - ✅ Channel loaded: BBC - audio, video
+2025-09-21 05:59:35,260 - INFO - ✅ Channel loaded: RFA - audio, video
+2025-09-21 05:59:35,260 - INFO - ✅ Đã lấy 6 channels từ Firebase
+2025-09-21 05:59:35,262 - ERROR - ❌ Error downloading video https://www.youtube.com/watch?v=fh2BqvDYTas: [Errno 13] Permission denied: '/storage'
+2025-09-21 05:59:35,262 - ERROR - ❌ Failed to download video for: Ukr tổng phản công, giải phóng 160 km² Donetsk, bắt giữ 100 binh sĩ Nga trong “vạc dầu” Dobropillia
+2025-09-21 05:59:35,262 - INFO - 
+==================================================
+2025-09-21 05:59:35,262 - INFO - 📺 Checking channel: BBooks
+2025-09-21 05:59:35,263 - INFO - ==================================================
+2025-09-21 05:59:35,263 - INFO - 🔍 Fetching up to 3 latest videos from BBooks using yt-dlp...
+2025-09-21 05:59:40,112 - INFO - ⏹️ Stopped by user
